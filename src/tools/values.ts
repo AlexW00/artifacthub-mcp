@@ -6,7 +6,7 @@ import { ValuesParams } from "../types/artifactHub.js";
 // Register the values tool with the server
 export function registerValuesTool(server: McpServer) {
 	return server.tool(
-		"values",
+		"helm-chart-values",
 		"Get the values.yaml file for a specific Helm chart from Artifact Hub",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),

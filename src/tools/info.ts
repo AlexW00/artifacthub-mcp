@@ -6,7 +6,7 @@ import { InfoParams } from "../types/artifactHub.js";
 // Register the info tool with the server
 export function registerInfoTool(server: McpServer) {
 	return server.tool(
-		"info",
+		"helm-chart-info",
 		"Get information about a Helm chart from Artifact Hub, including ID, latest version, and description",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),
