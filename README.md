@@ -4,10 +4,18 @@ This is a Model Context Protocol (MCP) server for interacting with ArtifactHub. 
 
 ## Usage
 
-You can run this MCP server using Docker:
+Configure your MCP servers like this:
 
-```bash
-docker run -i ghcr.io/AlexW00/artifacthub-mcp:latest
+```json
+{
+	"servers": {
+		"artifacthub-mcp": {
+			"type": "stdio",
+			"command": "docker",
+			"args": ["run", "-i", "--rm", "ghcr.io/alexw00/artifacthub-mcp"]
+		}
+	}
+}
 ```
 
 ## Available tools

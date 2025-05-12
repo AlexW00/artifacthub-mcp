@@ -7,6 +7,7 @@ import { ValuesParams } from "../types/artifactHub.js";
 export function registerValuesTool(server: McpServer) {
 	return server.tool(
 		"values",
+		"Get the values.yaml file for a specific Helm chart from Artifact Hub",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),
 			chartName: z.string().describe("The Helm chart name"),
@@ -14,10 +15,6 @@ export function registerValuesTool(server: McpServer) {
 				.string()
 				.optional()
 				.describe("The chart version (optional, defaults to latest)"),
-		},
-		{
-			description:
-				"Get the values.yaml file for a specific Helm chart from Artifact Hub",
 		},
 		async ({ chartRepo, chartName, version }: ValuesParams) => {
 			try {

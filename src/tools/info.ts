@@ -7,13 +7,10 @@ import { InfoParams } from "../types/artifactHub.js";
 export function registerInfoTool(server: McpServer) {
 	return server.tool(
 		"info",
+		"Get information about a Helm chart from Artifact Hub, including ID, latest version, and description",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),
 			chartName: z.string().describe("The Helm chart name"),
-		},
-		{
-			description:
-				"Get information about a Helm chart from Artifact Hub, including ID, latest version, and description",
 		},
 		async ({ chartRepo, chartName }: InfoParams) => {
 			try {
