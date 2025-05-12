@@ -4,7 +4,9 @@ This is a Model Context Protocol (MCP) server for interacting with Helm charts o
 
 ## Usage
 
-Configure your MCP servers like this:
+For VS-Code, click this [auto-install-link](https://insiders.vscode.dev/redirect/mcp/install?name=artifacthub-mcp&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22ghcr.io%2Falexw00%2Fartifacthub-mcp%3A1.0.0%22%5D%7D).
+
+Alternatively, use this MCP configuration:
 
 ```json
 {
@@ -17,6 +19,8 @@ Configure your MCP servers like this:
 	}
 }
 ```
+
+[Install ArtifactHub MCP Server](vscode://vscode/extension/mcp?name=artifacthub-mcp&command=docker&args=run,-i,--rm,ghcr.io/alexw00/artifacthub-mcp:1.0.0)
 
 ## Available tools
 
