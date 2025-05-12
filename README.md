@@ -22,7 +22,7 @@ Alternatively, use this MCP configuration:
 
 ## Available tools
 
-### 1. info
+### 1. helm-chart-info
 
 Get information about a Helm chart.
 
@@ -37,7 +37,7 @@ Get information about a Helm chart.
 - `latest_version`: The latest version of the chart
 - `description`: The chart description
 
-### 2. values
+### 2. helm-chart-values
 
 Get the values.yaml file for a Helm chart.
 
