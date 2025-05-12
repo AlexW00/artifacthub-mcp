@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { registerInfoTool } from "./tools/info.js";
 import { registerValuesTool } from "./tools/values.js";
+import { registerValuesPropertyTool } from "./tools/valuesProperty.js";
 
 // Create a new MCP server
 const server = new McpServer({
@@ -13,6 +14,7 @@ const server = new McpServer({
 // Register tools
 registerInfoTool(server);
 registerValuesTool(server);
+registerValuesPropertyTool(server);
 
 // Connect the server to standard I/O
 const transport = new StdioServerTransport();

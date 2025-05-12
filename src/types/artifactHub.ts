@@ -21,3 +21,7 @@ export interface ValuesParams {
 	chartName: string;
 	version?: string;
 }
+
+export interface YamlPathParams extends ValuesParams {
+	yamlPath: string;
+}
