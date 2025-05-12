@@ -1,6 +1,6 @@
 # ArtifactHub MCP Server
 
-This is a Model Context Protocol (MCP) server for interacting with ArtifactHub. It provides tools to retrieve information about Helm charts and their values.
+This is a Model Context Protocol (MCP) server for interacting with Helm charts on [Artifacthub](https://artifacthub.io/).
 
 ## Usage
 
