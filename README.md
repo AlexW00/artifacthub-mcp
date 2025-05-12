@@ -20,8 +20,6 @@ Alternatively, use this MCP configuration:
 }
 ```
 
-[Install ArtifactHub MCP Server](vscode://vscode/extension/mcp?name=artifacthub-mcp&command=docker&args=run,-i,--rm,ghcr.io/alexw00/artifacthub-mcp:1.0.0)
-
 ## Available tools
 
 ### 1. info
