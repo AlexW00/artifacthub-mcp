@@ -51,6 +51,29 @@ Get the values.yaml file for a Helm chart.
 
 - The content of the values.yaml file
 
+### 3. helm-chart-value-property
+
+Get a specific property from a Helm chart's values.yaml file using a YAML path.
+
+**Parameters:**
+
+- `chartRepo`: The Helm chart repository name
+- `chartName`: The Helm chart name
+- `yamlPath`: The YAML path to the property (e.g., 'replicaCount' or 'image.tag')
+- `version`: (Optional) The chart version. If not provided, the latest version is used.
+
+**Returns:**
+
+- The value at the specified path
+- Comments above the property (if available)
+
+**Example:**
+
+```
+# Get the image tag from the bitnami/wordpress chart
+helm-chart-value-property(chartRepo: "bitnami", chartName: "wordpress", yamlPath: "image.tag")
+```
+
 ## Note
 
 This project has been vibe coded
