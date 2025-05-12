@@ -88,7 +88,7 @@ interface FuzzySearchParams extends ValuesParams {
 export function registerFuzzySearchValuesTool(server: McpServer) {
 	return server.tool(
 		"helm-chart-values-fuzzy-search",
-		"Fuzzy search through all properties in a Helm chart's values.yaml file",
+		"Fuzzy search through all properties/values/comments in a Helm chart's values.yaml file",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),
 			chartName: z.string().describe("The Helm chart name"),

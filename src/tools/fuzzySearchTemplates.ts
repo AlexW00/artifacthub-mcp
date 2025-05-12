@@ -26,7 +26,7 @@ const CONTEXT_LINES = 3;
 export function registerFuzzySearchTemplatesTool(server: McpServer) {
 	return server.tool(
 		"helm-chart-templates-fuzzy-search",
-		"Fuzzy search through all templates in a Helm chart",
+		"Fuzzy search through all template filenames/contents in a Helm chart",
 		{
 			chartRepo: z.string().describe("The Helm chart repository name"),
 			chartName: z.string().describe("The Helm chart name"),
