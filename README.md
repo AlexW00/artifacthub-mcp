@@ -22,51 +22,8 @@ Alternatively, use this MCP configuration:
 
 ## Available tools
 
-### 1. helm-chart-info
-
-Get information about a Helm chart.
-
-**Parameters:**
-
-- `chartRepo`: The Helm chart repository name
-- `chartName`: The Helm chart name
-
-**Returns:**
-
-- `id`: The package ID
-- `latest_version`: The latest version of the chart
-- `description`: The chart description
-
-### 2. helm-chart-values
-
-Get the values.yaml file for a Helm chart.
-
-**Parameters:**
-
-- `chartRepo`: The Helm chart repository name
-- `chartName`: The Helm chart name
-- `version`: (Optional) The chart version. If not provided, the latest version is used.
-
-**Returns:**
-
-- The content of the values.yaml file
-
-### 3. helm-chart-value-property
-
-Get a specific property from a Helm chart's values.yaml file using a YAML path.
-
-**Parameters:**
-
-- `chartRepo`: The Helm chart repository name
-- `chartName`: The Helm chart name
-- `yamlPath`: The YAML path to the property (e.g., 'replicaCount' or 'image.tag')
-- `version`: (Optional) The chart version. If not provided, the latest version is used.
-
-**Returns:**
-
-- The value at the specified path
-- Comments above the property (if available)
-
-## Note
-
-This project has been vibe coded
+- helm-chart-info: get information about a Helm chart such as id and latest version
+- helm-chart-values: get the default values.yaml of a Helm chart
+- helm-chart-values-fuzzy-search: fuzzy search for a value in the default values.yaml of a Helm chart
+- helm-chart-template: get a template of a Helm chart by name
+- helm-chart-template-fuzzy-search: fuzzy search the names/contents of templates

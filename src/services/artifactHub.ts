@@ -1,5 +1,9 @@
 // Utility functions to interact with Artifact Hub API
-import { ArtifactHubPackage } from "../types/artifactHub.js";
+import {
+	ArtifactHubPackage,
+	ChartTemplatesResponse,
+	DecodedChartTemplate,
+} from "../types/artifactHub.js";
 
 // Fetch data from Artifact Hub API
 export async function fetchFromArtifactHub(
@@ -48,4 +52,23 @@ export async function getChartValues(
 ): Promise<string> {
 	const valuesUrl = `https://artifacthub.io/api/v1/packages/${packageId}/${version}/values`;
 	return await fetchFromArtifactHub(valuesUrl, true);
+}
+
+// Get chart templates from Artifact Hub
+export async function getChartTemplates(
+	packageId: string,
+	version: string
+): Promise<{ templates: DecodedChartTemplate[] }> {
+	const templatesUrl = `https://artifacthub.io/api/v1/packages/${packageId}/${version}/templates`;
+	const response = (await fetchFromArtifactHub(
+		templatesUrl
+	)) as ChartTemplatesResponse;
+
+	// Decode base64 data for each template
+	return {
+		templates: response.templates.map((template) => ({
+			name: template.name,
+			content: Buffer.from(template.data, "base64").toString("utf-8"),
+		})),
+	};
 }

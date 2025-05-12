@@ -1,9 +1,10 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { registerFuzzySearchTemplatesTool } from "./tools/fuzzySearchTemplates.js";
 import { registerFuzzySearchValuesTool } from "./tools/fuzzySearchValues.js";
 import { registerInfoTool } from "./tools/info.js";
+import { registerTemplateTool } from "./tools/template.js";
 import { registerValuesTool } from "./tools/values.js";
-import { registerValuesPropertyTool } from "./tools/valuesProperty.js";
 
 // Create a new MCP server
 const server = new McpServer({
@@ -15,8 +16,9 @@ const server = new McpServer({
 // Register tools
 registerInfoTool(server);
 registerValuesTool(server);
-registerValuesPropertyTool(server);
 registerFuzzySearchValuesTool(server);
+registerTemplateTool(server);
+registerFuzzySearchTemplatesTool(server);
 
 // Connect the server to standard I/O
 const transport = new StdioServerTransport();
