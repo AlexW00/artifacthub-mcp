@@ -67,13 +67,6 @@ Get a specific property from a Helm chart's values.yaml file using a YAML path.
 - The value at the specified path
 - Comments above the property (if available)
 
-**Example:**
-
-```
-# Get the image tag from the bitnami/wordpress chart
-helm-chart-value-property(chartRepo: "bitnami", chartName: "wordpress", yamlPath: "image.tag")
-```
-
 ## Note
 
 This project has been vibe coded
